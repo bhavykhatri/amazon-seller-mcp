@@ -2,6 +2,7 @@
 
 [![npm version](https://img.shields.io/npm/v/seller-central-mcp)](https://www.npmjs.com/package/seller-central-mcp)
 [![license](https://img.shields.io/npm/l/seller-central-mcp)](LICENSE)
+[![CI](https://github.com/bhavykhatri/amazon-seller-mcp/actions/workflows/ci.yml/badge.svg)](https://github.com/bhavykhatri/amazon-seller-mcp/actions/workflows/ci.yml)
 
 > ✅ Published on npm as **[`seller-central-mcp`](https://www.npmjs.com/package/seller-central-mcp)** — run instantly with `npx seller-central-mcp` (no clone or build needed).
 
