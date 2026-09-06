@@ -32,7 +32,24 @@ Tools exposed by this server:
 - Amazon SP-API access (LWA app credentials + refresh token). See the
   [SP-API docs](https://developer-docs.amazon.com/sp-api/).
 
-## Setup
+## Install
+
+Run directly from npm (no clone needed):
+
+```bash
+npx seller-central-mcp
+```
+
+Or install globally:
+
+```bash
+npm install -g seller-central-mcp
+seller-central-mcp
+```
+
+> Provide credentials via environment variables (see [Configuration](#configuration)).
+
+## Setup (from source)
 
 ```bash
 npm install
@@ -100,8 +117,8 @@ Add to `claude_desktop_config.json`:
 {
   "mcpServers": {
     "amazon-seller": {
-      "command": "node",
-      "args": ["/absolute/path/to/mcp/dist/index.js"],
+      "command": "npx",
+      "args": ["-y", "seller-central-mcp"],
       "env": { "SP_API_CLIENT_ID": "...", "SP_API_CLIENT_SECRET": "...", "SP_API_REFRESH_TOKEN": "...", "SP_API_SELLER_ID": "..." }
     }
   }
