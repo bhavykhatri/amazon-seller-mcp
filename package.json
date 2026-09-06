@@ -1,0 +1,35 @@
+{
+  "name": "amazon-seller-mcp",
+  "version": "0.1.0",
+  "description": "Model Context Protocol (MCP) server for the Amazon Selling Partner API (SP-API), India marketplace: seller profile, listings search/get/upsert/delete, quantity, and product-type definitions.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Bhavy Khatri",
+  "keywords": ["mcp", "model-context-protocol", "amazon", "sp-api", "selling-partner-api", "amazon-seller"],
+  "repository": { "type": "git", "url": "git+https://github.com/bhavykhatri/amazon-seller-mcp.git" },
+  "homepage": "https://github.com/bhavykhatri/amazon-seller-mcp#readme",
+  "bugs": { "url": "https://github.com/bhavykhatri/amazon-seller-mcp/issues" },
+  "bin": {
+    "amazon-seller-mcp": "dist/index.js"
+  },
+  "main": "dist/index.js",
+  "files": ["dist"],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsx watch src/index.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22.7.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0"
+  }
+}

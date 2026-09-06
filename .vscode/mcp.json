@@ -1,0 +1,17 @@
+{
+  "servers": {
+    "amazon-seller": {
+      "type": "stdio",
+      "command": "node",
+      "args": ["${workspaceFolder}/dist/index.js"],
+      "env": {
+        "SP_API_CLIENT_ID": "${env:SP_API_CLIENT_ID}",
+        "SP_API_CLIENT_SECRET": "${env:SP_API_CLIENT_SECRET}",
+        "SP_API_REFRESH_TOKEN": "${env:SP_API_REFRESH_TOKEN}",
+        "SP_API_SELLER_ID": "${env:SP_API_SELLER_ID}",
+        "SP_API_MARKETPLACE_ID": "A21TJRUUN4KGV",
+        "SP_API_ENDPOINT": "https://sellingpartnerapi-eu.amazon.com"
+      }
+    }
+  }
+}
