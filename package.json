@@ -1,6 +1,6 @@
 {
   "name": "seller-central-mcp",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Model Context Protocol (MCP) server for the Amazon Selling Partner API (SP-API): listings, orders, reports, feeds, and pricing. Works with any marketplace/region.",
   "type": "module",
   "license": "MIT",
