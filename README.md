@@ -1,5 +1,10 @@
 # Amazon Seller MCP
 
+[![npm version](https://img.shields.io/npm/v/seller-central-mcp)](https://www.npmjs.com/package/seller-central-mcp)
+[![license](https://img.shields.io/npm/l/seller-central-mcp)](LICENSE)
+
+> ✅ Published on npm as **[`seller-central-mcp`](https://www.npmjs.com/package/seller-central-mcp)** — run instantly with `npx seller-central-mcp` (no clone or build needed).
+
 A [Model Context Protocol](https://modelcontextprotocol.io) (MCP) server for the **Amazon Selling Partner API (SP-API)**. It exposes seller data and listing operations as MCP tools so any MCP-compatible client (VS Code, Claude Desktop, etc.) can query and manage your Amazon catalogue.
 
 > Works with **any SP-API marketplace and region** — set `SP_API_MARKETPLACE_ID` and `SP_API_ENDPOINT` for your target (defaults to India / `amazon.in`). LWA-only auth — no AWS SigV4 signing required.

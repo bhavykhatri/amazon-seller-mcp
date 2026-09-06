@@ -8,6 +8,20 @@
 
 ## 2. Install
 
+### Option A — from npm (recommended, no build)
+
+The server is published as [`seller-central-mcp`](https://www.npmjs.com/package/seller-central-mcp):
+
+```bash
+npx seller-central-mcp          # run on demand
+# or
+npm install -g seller-central-mcp
+```
+
+With npm you can skip the build step — jump to [step 3](#3-configure).
+
+### Option B — from source
+
 ```bash
 cd mcp
 npm install
