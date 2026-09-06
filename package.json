@@ -1,20 +1,36 @@
 {
   "name": "seller-central-mcp",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Model Context Protocol (MCP) server for the Amazon Selling Partner API (SP-API): listings, orders, reports, feeds, and pricing. Works with any marketplace/region.",
   "type": "module",
   "license": "MIT",
   "author": "Bhavy Khatri",
-  "keywords": ["mcp", "model-context-protocol", "amazon", "sp-api", "selling-partner-api", "amazon-seller"],
-  "repository": { "type": "git", "url": "git+https://github.com/bhavykhatri/amazon-seller-mcp.git" },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "amazon",
+    "sp-api",
+    "selling-partner-api",
+    "amazon-seller"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bhavykhatri/amazon-seller-mcp.git"
+  },
   "homepage": "https://github.com/bhavykhatri/amazon-seller-mcp#readme",
-  "bugs": { "url": "https://github.com/bhavykhatri/amazon-seller-mcp/issues" },
+  "bugs": {
+    "url": "https://github.com/bhavykhatri/amazon-seller-mcp/issues"
+  },
   "bin": {
     "seller-central-mcp": "dist/index.js"
   },
   "main": "dist/index.js",
-  "files": ["dist"],
-  "publishConfig": { "access": "public" },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
   "engines": {
     "node": ">=18"
   },

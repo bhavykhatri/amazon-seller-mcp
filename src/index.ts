@@ -1,11 +1,17 @@
 #!/usr/bin/env node
 // Amazon Seller MCP server (stdio).
 // stdout is reserved for the MCP protocol — log only to stderr.
+import { readFileSync } from "node:fs";
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { loadConfig } from "./config.js";
 import { SpApiClient } from "./spapi/client.js";
 import { registerAllTools } from "./tools/index.js";
+
+const pkg = JSON.parse(readFileSync(new URL("../package.json", import.meta.url), "utf8")) as {
+  name: string;
+  version: string;
+};
 
 async function main(): Promise<void> {
   const config = loadConfig();
@@ -16,12 +22,12 @@ async function main(): Promise<void> {
   }
 
   const client = new SpApiClient(config);
-  const server = new McpServer({ name: "amazon-seller-mcp", version: "0.1.0" });
+  const server = new McpServer({ name: pkg.name, version: pkg.version });
   registerAllTools(server, client);
 
   const transport = new StdioServerTransport();
   await server.connect(transport);
-  console.error("amazon-seller-mcp running on stdio");
+  console.error(`${pkg.name} v${pkg.version} running on stdio`);
 
   const shutdown = async (): Promise<void> => {
     await server.close().catch(() => {});
