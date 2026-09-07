@@ -42,6 +42,13 @@ This extension is a thin wrapper. All tools and logic live in the
 [`seller-central-mcp`](https://www.npmjs.com/package/seller-central-mcp) npm package
 ([source](https://github.com/bhavykhatri/amazon-seller-mcp)).
 
+## Other MCP hosts (Claude, Codex, Cursor)
+
+This extension only integrates the server into **VS Code / Copilot**. Claude Desktop,
+Claude Code, OpenAI Codex, and Cursor don't load VS Code extensions — but they run the
+**same** server. Configure `npx -y seller-central-mcp` directly in each host's config;
+see [Use with Claude, Codex, Cursor & other MCP hosts](https://github.com/bhavykhatri/amazon-seller-mcp#use-with-claude-codex-cursor--other-mcp-hosts).
+
 ## License
 
 MIT © Bhavy Khatri

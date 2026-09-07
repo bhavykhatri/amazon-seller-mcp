@@ -70,8 +70,8 @@ Add to `claude_desktop_config.json`:
 {
   "mcpServers": {
     "amazon-seller": {
-      "command": "node",
-      "args": ["/absolute/path/to/mcp/dist/index.js"],
+      "command": "npx",
+      "args": ["-y", "seller-central-mcp"],
       "env": {
         "SP_API_CLIENT_ID": "...",
         "SP_API_CLIENT_SECRET": "...",
@@ -82,6 +82,32 @@ Add to `claude_desktop_config.json`:
   }
 }
 ```
+
+> Prefer running from source? Replace `command`/`args` with `"command": "node", "args": ["/absolute/path/to/mcp/dist/index.js"]`.
+
+### Claude Code (CLI)
+
+```bash
+claude mcp add amazon-seller \
+  -e SP_API_CLIENT_ID=... -e SP_API_CLIENT_SECRET=... \
+  -e SP_API_REFRESH_TOKEN=... -e SP_API_SELLER_ID=... \
+  -- npx -y seller-central-mcp
+```
+
+### OpenAI Codex CLI
+Add to `~/.codex/config.toml`:
+
+```toml
+[mcp_servers.amazon-seller]
+command = "npx"
+args = ["-y", "seller-central-mcp"]
+env = { SP_API_CLIENT_ID = "...", SP_API_CLIENT_SECRET = "...", SP_API_REFRESH_TOKEN = "...", SP_API_SELLER_ID = "..." }
+```
+
+### Cursor
+Add to `.cursor/mcp.json` (project) or `~/.cursor/mcp.json` (global), using the same `mcpServers` shape as Claude Desktop above.
+
+> The [VS Code extension](../vscode-extension/) is the only host integration that stores credentials in encrypted SecretStorage. For the CLIs/apps above, credentials live in their config `env` blocks — keep those files private.
 
 ## 6. Try it
 

@@ -131,9 +131,51 @@ This repo ships a [`.vscode/mcp.json`](.vscode/mcp.json). Open it in VS Code and
 }
 ```
 
-## Use with Claude Desktop
+## Use with Claude, Codex, Cursor & other MCP hosts
+
+This is a standard MCP server, so it works with **any MCP-compatible host** — not just VS Code. The [VS Code extension](vscode-extension/) is only a convenience wrapper for VS Code/Copilot; other hosts configure the same `npx seller-central-mcp` server directly in their own config files.
+
+Every host uses the same four required env vars (`SP_API_CLIENT_ID`, `SP_API_CLIENT_SECRET`, `SP_API_REFRESH_TOKEN`, `SP_API_SELLER_ID`), plus optional `SP_API_MARKETPLACE_ID` / `SP_API_ENDPOINT`.
+
+### Claude Desktop
 
 Add to `claude_desktop_config.json`:
+
+```json
+{
+  "mcpServers": {
+    "amazon-seller": {
+      "command": "npx",
+      "args": ["-y", "seller-central-mcp"],
+      "env": { "SP_API_CLIENT_ID": "...", "SP_API_CLIENT_SECRET": "...", "SP_API_REFRESH_TOKEN": "...", "SP_API_SELLER_ID": "...", "SP_API_MARKETPLACE_ID": "A21TJRUUN4KGV", "SP_API_ENDPOINT": "https://sellingpartnerapi-eu.amazon.com" }
+    }
+  }
+}
+```
+
+### Claude Code (CLI)
+
+```bash
+claude mcp add amazon-seller \
+  -e SP_API_CLIENT_ID=... -e SP_API_CLIENT_SECRET=... \
+  -e SP_API_REFRESH_TOKEN=... -e SP_API_SELLER_ID=... \
+  -- npx -y seller-central-mcp
+```
+
+### OpenAI Codex CLI
+
+Add to `~/.codex/config.toml`:
+
+```toml
+[mcp_servers.amazon-seller]
+command = "npx"
+args = ["-y", "seller-central-mcp"]
+env = { SP_API_CLIENT_ID = "...", SP_API_CLIENT_SECRET = "...", SP_API_REFRESH_TOKEN = "...", SP_API_SELLER_ID = "...", SP_API_MARKETPLACE_ID = "A21TJRUUN4KGV", SP_API_ENDPOINT = "https://sellingpartnerapi-eu.amazon.com" }
+```
+
+### Cursor
+
+Add to `.cursor/mcp.json` (project) or `~/.cursor/mcp.json` (global) — same shape as Claude Desktop:
 
 ```json
 {
@@ -146,6 +188,8 @@ Add to `claude_desktop_config.json`:
   }
 }
 ```
+
+> Only VS Code (via the extension) stores credentials in encrypted SecretStorage. For the hosts above, credentials live in their config `env` blocks — keep those files private and out of version control.
 
 ## Project structure
 
