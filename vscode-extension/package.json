@@ -2,7 +2,7 @@
   "name": "seller-central-mcp-vscode",
   "displayName": "Seller Central MCP",
   "description": "Adds the Amazon Selling Partner API (SP-API) MCP server to VS Code, with secure credential storage. Wraps the seller-central-mcp npm package.",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "publisher": "bhavykhatri",
   "license": "MIT",
   "icon": "icon.png",
