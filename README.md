@@ -1,6 +1,8 @@
 # Amazon Seller MCP
 
 [![npm version](https://img.shields.io/npm/v/seller-central-mcp)](https://www.npmjs.com/package/seller-central-mcp)
+[![npm downloads](https://img.shields.io/npm/dt/seller-central-mcp?label=npm%20installs)](https://www.npmjs.com/package/seller-central-mcp)
+[![VS Code installs](https://img.shields.io/visual-studio-marketplace/i/bhavykhatri.seller-central-mcp-vscode?label=vs%20code%20installs)](https://marketplace.visualstudio.com/items?itemName=bhavykhatri.seller-central-mcp-vscode)
 [![license](https://img.shields.io/npm/l/seller-central-mcp)](LICENSE)
 [![CI](https://github.com/bhavykhatri/amazon-seller-mcp/actions/workflows/ci.yml/badge.svg)](https://github.com/bhavykhatri/amazon-seller-mcp/actions/workflows/ci.yml)
 
