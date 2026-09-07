@@ -5,6 +5,8 @@
 [![CI](https://github.com/bhavykhatri/amazon-seller-mcp/actions/workflows/ci.yml/badge.svg)](https://github.com/bhavykhatri/amazon-seller-mcp/actions/workflows/ci.yml)
 
 > ✅ Published on npm as **[`seller-central-mcp`](https://www.npmjs.com/package/seller-central-mcp)** — run instantly with `npx seller-central-mcp` (no clone or build needed).
+>
+> 🧩 Also available as a **[VS Code extension](vscode-extension/)** for one-click install with secure credential storage.
 
 A [Model Context Protocol](https://modelcontextprotocol.io) (MCP) server for the **Amazon Selling Partner API (SP-API)**. It exposes seller data and listing operations as MCP tools so any MCP-compatible client (VS Code, Claude Desktop, etc.) can query and manage your Amazon catalogue.
 
@@ -98,7 +100,21 @@ npm start          # run the built server (stdio)
 npm run dev        # watch mode with tsx
 ```
 
-## Use with VS Code
+## VS Code extension
+
+<img src="vscode-extension/icon.png" alt="Seller Central MCP" width="72" align="left" />
+
+Prefer a one-click setup? Install the **[Seller Central MCP VS Code extension](vscode-extension/)**. It registers this server automatically and stores your SP-API credentials in encrypted **SecretStorage** — no manual `mcp.json` or `.env` editing.
+
+<br clear="left" />
+
+1. Install the extension (from the Marketplace, or the packaged `.vsix` in [`vscode-extension/`](vscode-extension/)).
+2. Run **`Seller Central MCP: Set Credentials`** from the Command Palette.
+3. The **Seller Central MCP** server appears in the MCP view — use its tools from Chat.
+
+Under the hood it just launches `npx -y seller-central-mcp` with your credentials injected as environment variables. See [`vscode-extension/README.md`](vscode-extension/README.md) for details.
+
+## Use with VS Code (manual)
 
 This repo ships a [`.vscode/mcp.json`](.vscode/mcp.json). Open it in VS Code and start the server from the MCP view, or point your MCP host at:
 

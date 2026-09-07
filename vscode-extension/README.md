@@ -1,6 +1,10 @@
 # Seller Central MCP — VS Code Extension
 
+<img src="icon.png" alt="Seller Central MCP" width="96" align="left" />
+
 Adds the **[seller-central-mcp](https://www.npmjs.com/package/seller-central-mcp)** server (Amazon Selling Partner API) to VS Code as a managed MCP server, with **secure credential storage**.
+
+<br clear="left" />
 
 ## What it does
 
